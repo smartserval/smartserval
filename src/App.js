@@ -29,6 +29,7 @@ const ExampleToast = ({ children }) => {
 const App = () => (
   <Container className="p-3">
     <Jumbotron>
+       <img src={logo} className="App-logo" alt="logo" />
       <h1 className="header">Welcome To React-Bootstrap</h1>
       <ExampleToast className="toast">
         We now have Toasts
