@@ -10,33 +10,11 @@ import Button from 'react-bootstrap/Button';
 
 import './App.css';
 
-const ExampleToast = ({ children }) => {
-  const [show, toggleShow] = useState(true);
-
-  return (
-    <>
-      {!show && <Button onClick={() => toggleShow(true)}>Show Toast</Button>}
-      <Toast show={show} onClose={() => toggleShow(false)}>
-        <Toast.Header>
-          <strong className="mr-auto">React-Bootstrap</strong>
-        </Toast.Header>
-        <Toast.Body>{children}</Toast.Body>
-      </Toast>
-    </>
-  );
-};
-
 const App = () => (
   <Container className="p-3">
-    <Jumbotron>
-       <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="header">Welcome To React-Bootstrap</h1>
-      <ExampleToast className="toast">
-        We now have Toasts
-        <span role="img" aria-label="tada">
-          🎉
-        </span>
-      </ExampleToast>
+    <Jumbotron className="smart-background App">
+      <h1 className="header">Welcome To Smart Kids</h1>
+      <Button size="lg">start</Button>
     </Jumbotron>
   </Container>
 );
