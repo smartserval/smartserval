@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import paw from './pics/paw.svg';
 import './App.css';
 
 import React, { useState } from 'react';
@@ -20,14 +20,6 @@ import './App.css';
 const App = () => (
      <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
         <Nav
   activeKey="/home"
   onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
@@ -39,8 +31,6 @@ const App = () => (
     <Nav.Link href="/about">about</Nav.Link>
   </Nav.Item>
 </Nav>
-
-        <hr />
 
         {/*
           A <Switch> looks through all its children <Route>
@@ -56,8 +46,8 @@ const App = () => (
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/dashboard">
-            <Dashboard />
+          <Route path="/game">
+            <Game />
           </Route>
         </Switch>
       </div>
@@ -68,8 +58,11 @@ function Home() {
   return (
   <Container className="p-3">
     <Jumbotron className="smart-background App">
-      <h1 className="header">Welcome To Smart Kids</h1>
-      <Button size="lg">start</Button>
+      <h1 className="header">Welcome To sotomot</h1>
+      <Button href="/game" size="lg">
+        start
+      <img src={paw} className="Applogo" alt="paw" />
+      </Button>
     </Jumbotron>
   </Container>
   );
@@ -83,11 +76,11 @@ function About() {
   );
 }
 
-function Dashboard() {
+function Game() {
   return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
+    <Container className="p-3 centered">
+      <h1 className="header">firelands</h1>
+    </Container>
   );
 }
 
