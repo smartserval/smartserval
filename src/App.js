@@ -1,8 +1,11 @@
+// npm run storybook
+// https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg
 import paw from './pics/paw.svg';
 import './App.css';
 
 import React, { useState } from 'react';
 
+import Tank from './Tank.js';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Toast from 'react-bootstrap/Toast';
 import Container from 'react-bootstrap/Container';
@@ -58,10 +61,10 @@ function Home() {
   return (
   <Container className="p-3">
     <Jumbotron className="smart-background App">
-      <h1 className="header">Welcome To sotomot</h1>
+      <h1 className="header">Welcome To sotamot</h1>
       <Button href="/game" size="lg">
         start
-      <img src={paw} className="Applogo" alt="paw" />
+        <img src={paw} className="paw-button-image" alt="paw" />
       </Button>
     </Jumbotron>
   </Container>
@@ -78,8 +81,13 @@ function About() {
 
 function Game() {
   return (
-    <Container className="p-3 centered">
+    <Container className="p-3 centered firelands">
       <h1 className="header">firelands</h1>
+      <Container>
+        <Tank />
+
+        <img src={paw} className="paw-button-image" alt="paw" />
+      </Container>
     </Container>
   );
 }
