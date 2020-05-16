@@ -3,23 +3,28 @@ import React, { useState } from 'react';
 class Tank extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = {automatic: props.automatic, stars: 0};
   }
 
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
+    if (this.state.automatic) {
+      this.timerID = setInterval(
+        () => this.tick(),
+        1000
+      );
+    }
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerID);
+    if (this.state.automatic) {
+      clearInterval(this.timerID);
+    }
   }
 
   tick() {
+    var newStars = this.state.stars > 29 ? 30 : this.state.stars + 1
     this.setState({
-      date: new Date()
+      stars: newStars
     });
   }
 
@@ -27,7 +32,7 @@ class Tank extends React.Component {
     return (
       <div>
         <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h2>It is {this.state.stars}.</h2>
       </div>
     );
   }

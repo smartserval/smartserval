@@ -84,6 +84,7 @@ function Game() {
     <Container className="p-3 centered firelands">
       <h1 className="header">firelands</h1>
       <Container>
+        <Tank automatic={true} />
         <Tank />
 
         <img src={paw} className="paw-button-image" alt="paw" />
