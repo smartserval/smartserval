@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 class Tank extends React.Component {
   constructor(props) {
@@ -31,7 +31,6 @@ class Tank extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
         <h2>It is {this.state.stars}.</h2>
       </div>
     );

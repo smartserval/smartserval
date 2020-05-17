@@ -52,3 +52,10 @@
 .firelands {
   background-color: #00ffe7;
 }
+
+.outlined {
+  font-family: Times New Roman;
+  font-size: calc(10px + 9vmin);
+    font-weight: bold;
+
+}

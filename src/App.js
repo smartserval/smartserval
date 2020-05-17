@@ -1,24 +1,17 @@
 // npm run storybook
 // https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg
-import paw from './pics/paw.svg';
 import './App.css';
 
-import React, { useState } from 'react';
+import { Col, Row } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Nav from 'react-bootstrap/Nav';
+import React from 'react';
 
 import Tank from './Tank.js';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Toast from 'react-bootstrap/Toast';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
-import './App.css';
+import paw from './pics/paw.svg';
 
 const App = () => (
      <Router>
@@ -82,7 +75,11 @@ function About() {
 function Game() {
   return (
     <Container className="p-3 centered firelands">
-      <h1 className="header">firelands</h1>
+  <Row>
+    <Col>1 of 1</Col>
+    <Col>1 of 1</Col>
+  </Row>
+      <h1 className="header outlined">Firelands</h1>
       <Container>
         <Tank automatic={true} />
         <Tank />
@@ -95,4 +92,3 @@ function Game() {
 
 
 export default App;
-
