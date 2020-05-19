@@ -2,18 +2,11 @@
 // https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg
 import './App.css';
 
-import {
-  Button,
-  Col,
-  Container,
-  Form,
-  Jumbotron,
-  Nav,
-  Row
-} from 'react-bootstrap';
+import { Button, Col, Container, Jumbotron, Nav, Row } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React from 'react';
 
+import ProfileForm from './ProfileForm';
 import Tank from './Tank.js';
 import paw from './pics/paw.svg';
 
@@ -65,18 +58,7 @@ function Profile() {
   return (
     <Container className="p-3 smart-background centered">
       <h1 className="header outlined">Profile</h1>
-      <Form>
-        <Form.Group controlId="exampleForm.ControlSelect1">
-          <Form.Label>Choose your name!</Form.Label>
-          <Form.Control as="select">
-            <option>Ellen</option>
-            <option>Abby</option>
-            <option>David</option>
-            <option>Danny</option>
-            <option>Lila</option>
-          </Form.Control>
-        </Form.Group>
-    </Form>
+      <ProfileForm />
     </Container>
   );
 }
