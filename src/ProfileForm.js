@@ -1,6 +1,9 @@
 import { Button, Form } from 'react-bootstrap';
 import React from 'react';
 
+import history from './../history';
+
+
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +20,7 @@ class ProfileForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('An essay was submitted: ' + this.state.value);
+    history.push('/game');
     event.preventDefault();
   }
 
