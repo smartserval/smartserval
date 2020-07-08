@@ -8,10 +8,12 @@ import React from 'react';
 
 import Game from './Game';
 import ProfileForm from './ProfileForm';
+import history from './history';
 import paw from './pics/paw.svg';
 
 const App = () => (
-  <Router>
+              <Router history={history}>
+
     <div>
       <Nav
       activeKey="/home"

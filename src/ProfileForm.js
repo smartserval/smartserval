@@ -1,14 +1,17 @@
 import { Button, Form } from 'react-bootstrap';
+import { useHistory, withRouter } from 'react-router-dom';
 import React from 'react';
 
-import history from './../history';
+
+
 
 
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'Please write an essay about your favorite DOM element.'
+      value: 'Please write an essay about your favorite DOM element.',
+      grade: 'K'
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -19,7 +22,14 @@ class ProfileForm extends React.Component {
     this.setState({value: event.target.value});
   }
 
+  handleChangeGrade(event) {
+    this.setState({grade: event.target.value});
+  }
+
   handleSubmit(event) {
+      let history = useHistory();
+
+    console.log(this.state);
     history.push('/game');
     event.preventDefault();
   }
@@ -40,6 +50,16 @@ class ProfileForm extends React.Component {
             <option>Max</option>
           </Form.Control>
         </Form.Group>
+        <Form.Group controlId="gradeLevel">
+          <Form.Label>Choose your grade!</Form.Label>
+          <Form.Control as="select" value={this.state.grade} onChange={this.handleChangeGrade}>
+            <option>K</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </Form.Control>
+        </Form.Group>
         <Button variant="primary" type="submit">
           Done!
         </Button>
@@ -48,4 +68,4 @@ class ProfileForm extends React.Component {
   }
 }
 
-export default ProfileForm
+export default withRouter(ProfileForm)

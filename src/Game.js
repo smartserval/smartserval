@@ -3,8 +3,9 @@ import React from 'react';
 
 import Tank from './Tank';
 import paw from './pics/paw.svg';
+import player from './pics/player.svg';
 
-class ProfileForm extends React.Component {
+class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,10 +38,11 @@ class ProfileForm extends React.Component {
       <h1 className="header outlined">Firelands</h1>
       <Container>
         <img src={paw} className="paw-button-image" alt="paw" />
+        <img src={player} className="player" alt="you!" />
       </Container>
     </Container>
     );
   }
 }
 
-export default ProfileForm
+export default Game

@@ -49,6 +49,10 @@
   height: 13.5vmin;
 }
 
+.player {
+  height: 20vmin;
+}
+
 .firelands {
   background-color: #00ffe7;
 }
