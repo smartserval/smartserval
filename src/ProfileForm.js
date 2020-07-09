@@ -2,10 +2,6 @@ import { Button, Form } from 'react-bootstrap';
 import { useHistory, withRouter } from 'react-router-dom';
 import React from 'react';
 
-
-
-
-
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +11,7 @@ class ProfileForm extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeGrade = this.handleChangeGrade.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
