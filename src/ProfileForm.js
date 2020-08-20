@@ -1,42 +1,32 @@
 import { Button, Form } from 'react-bootstrap';
-import { useHistory, withRouter } from 'react-router-dom';
-import React from 'react';
+import { withRouter } from 'react-router-dom';
+import React, { useState } from 'react';
 
-class ProfileForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 'Please write an essay about your favorite DOM element.',
-      grade: 'K'
-    };
+import { useHistory } from "react-router";
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleChangeGrade = this.handleChangeGrade.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleChangeGrade(event) {
-    this.setState({grade: event.target.value});
-  }
-
-  handleSubmit(event) {
+function ProfileForm() {
       let history = useHistory();
+  const [name, setName] = useState('pinky');
+  const [grade, setGrade] = useState('1');
 
-    console.log(this.state);
+  const handleChange = event => {
+    setName(event.target.value);
+  }
+
+  const handleChangeGrade = event => {
+    setGrade(event.target.value);
+  }
+
+  const  handleSubmit = event => {
     history.push('/game');
     event.preventDefault();
   }
 
-  render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>Choose your name!</Form.Label>
-          <Form.Control as="select" value={this.state.value} onChange={this.handleChange}>
+          <Form.Control as="select" value={name} onChange={handleChange}>
             <option>Ellen</option>
             <option>Abby</option>
             <option>David</option>
@@ -49,7 +39,7 @@ class ProfileForm extends React.Component {
         </Form.Group>
         <Form.Group controlId="gradeLevel">
           <Form.Label>Choose your grade!</Form.Label>
-          <Form.Control as="select" value={this.state.grade} onChange={this.handleChangeGrade}>
+          <Form.Control as="select" value={grade} onChange={handleChangeGrade}>
             <option>K</option>
             <option>1</option>
             <option>2</option>
@@ -62,7 +52,6 @@ class ProfileForm extends React.Component {
         </Button>
       </Form>
     );
-  }
 }
 
 export default withRouter(ProfileForm)
