@@ -1,6 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import React from 'react';
 
+import Problem from './Problem';
 import Tank from './Tank';
 import paw from './pics/paw.svg';
 import player from './pics/player.svg';
@@ -33,6 +34,13 @@ class Game extends React.Component {
         </Col>
         <Col>
           <Tank automatic={true} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Problem />
+        </Col>
+        <Col>
         </Col>
       </Row>
       <h1 className="header outlined">Firelands</h1>
